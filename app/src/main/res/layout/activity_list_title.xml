@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ListTitleAdapter">
+
+    <TextView
+        android:id="@+id/hota_list_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_dark_background"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:layout_marginVertical="10dp"
+        android:text="Pattern"
+        android:textColor="#832929"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

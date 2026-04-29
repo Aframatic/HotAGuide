@@ -4,20 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:focusable="true"
+    android:clickable="true"
     android:orientation="vertical"
     tools:context=".ListTitleAdapter">
 
-    <TextView
-        android:id="@+id/hota_list_pattern"
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/cardview_dark_background"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp"
-        android:layout_marginVertical="10dp"
-        android:text="Pattern"
-        android:textColor="#832929"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:background="@drawable/background_pattern"
+        android:orientation="horizontal">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="55sp"
+            android:layout_height="55sp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10sp"
+            android:background="#DBB769"
+            android:src="@drawable/black_dragon" />
+
+        <TextView
+            android:id="@+id/hota_list_pattern"
+            android:layout_width="wrap_content"
+            android:layout_height="55sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="10dp"
+            android:background="#DBB769"
+            android:gravity="center"
+            android:text="Pattern"
+            android:textColor="#333333"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="55sp"
+            android:layout_height="55sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
+            android:background="#DBB769"
+            android:rotationY="-180"
+            android:src="@drawable/black_dragon"
+            tools:ignore="DuplicateIds" />
+    </RelativeLayout>
 </LinearLayout>

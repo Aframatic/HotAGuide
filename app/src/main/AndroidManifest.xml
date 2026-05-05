@@ -18,6 +18,12 @@
             android:name=".Outcast.OutcastCategoryActivity"
             android:exported="false" />
         <activity
+            android:name=".Jebus.starters.JebusStarterCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Jebus.objects.JebusObjectCategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".HOTAPattern.ListTitleAdapter"
             android:exported="false"
             tools:ignore="Instantiatable,MissingClass" />

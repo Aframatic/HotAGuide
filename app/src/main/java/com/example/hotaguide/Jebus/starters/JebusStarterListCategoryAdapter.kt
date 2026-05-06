@@ -9,6 +9,18 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hotaguide.Jebus.starters.castles.bulwark.JebusStarterHeroBulwarkCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.castle.JebusStarterHeroCastleCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.conflux.JebusStarterHeroConfluxCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.cove.JebusStarterHeroCoveCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.dungeon.JebusStarterHeroDungeonCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.factory.JebusStarterHeroFactoryCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.fortress.JebusStarterHeroFortressCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.inferno.JebusStarterHeroInfernoCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.necropolis.JebusStarterHeroNecropolisCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.rampart.JebusStarterHeroRampartCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.stronghold.JebusStarterHeroStrongholdCategoryActivity
+import com.example.hotaguide.Jebus.starters.castles.tower.JebusStarterHeroTowerCategoryActivity
 import com.example.hotaguide.R
 
 class JebusStarterListCategoryAdapter(
@@ -32,7 +44,44 @@ class JebusStarterListCategoryAdapter(
         p0.rightImage.setImageResource(imageId)
 
         p0.bt.setOnClickListener {
-            val intent = Intent(context, JebusStarterCategoryActivity::class.java)
+            var intent = Intent()
+
+            if (p0.name.text == "Замок") {
+                intent = Intent(context, JebusStarterHeroCastleCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Цитадель") {
+                intent =  Intent(context, JebusStarterHeroStrongholdCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Темница") {
+                intent =  Intent(context, JebusStarterHeroDungeonCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Оплот") {
+                intent =  Intent(context, JebusStarterHeroRampartCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Башня") {
+                intent =  Intent(context, JebusStarterHeroTowerCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Инферно") {
+                intent =  Intent(context, JebusStarterHeroInfernoCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Некрополис") {
+                intent =  Intent(context, JebusStarterHeroNecropolisCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Крепость") {
+                intent =  Intent(context, JebusStarterHeroFortressCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Сопряжение") {
+                intent =  Intent(context, JebusStarterHeroConfluxCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Причал") {
+                intent =  Intent(context, JebusStarterHeroCoveCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Фабрика") {
+                intent =  Intent(context, JebusStarterHeroFactoryCategoryActivity::class.java)
+            }
+            if (p0.name.text == "Кронверк") {
+                intent =  Intent(context, JebusStarterHeroBulwarkCategoryActivity::class.java)
+            }
             context.startActivity(intent)
         }
     }

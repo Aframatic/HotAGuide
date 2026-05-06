@@ -1,8 +1,6 @@
 package com.example.hotaguide.Jebus.starters
 
-import android.media.Image
 import android.os.Bundle
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,7 +23,7 @@ class JebusStarterCategoryActivity : AppCompatActivity() {
             insets
         }
         val title: TextView = findViewById(R.id.title)
-        title.text = "Стартеры"
+        title.text = "Замок стартера"
 
         val itemList: RecyclerView = findViewById(R.id.pattern)
         val items = arrayListOf<HOTAPattern>()

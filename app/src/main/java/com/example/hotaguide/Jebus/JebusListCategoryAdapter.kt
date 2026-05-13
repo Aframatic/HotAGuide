@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotaguide.HOTAPattern.HOTAPattern
+import com.example.hotaguide.Jebus.artefacts.JebusArtefactCategoryActivity
 import com.example.hotaguide.Jebus.objects.JebusObjectCategoryActivity
 import com.example.hotaguide.Jebus.starters.JebusStarterCategoryActivity
 import com.example.hotaguide.R
@@ -34,6 +35,10 @@ class JebusListCategoryAdapter(
 
             if (p0.name.text == "Объекты") {
                 intent =  Intent(context, JebusObjectCategoryActivity::class.java)
+            }
+
+            if (p0.name.text == "Артефакты") {
+                intent =  Intent(context, JebusArtefactCategoryActivity::class.java)
             }
             context.startActivity(intent)
         }

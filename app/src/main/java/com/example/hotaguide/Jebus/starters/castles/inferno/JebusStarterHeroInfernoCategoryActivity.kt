@@ -29,6 +29,7 @@ class JebusStarterHeroInfernoCategoryActivity : AppCompatActivity() {
         val items = arrayListOf<HOTAPattern>()
 
         items.add(HOTAPattern(1, "Игнатиус", "hero_ignatius"))
+        items.add(HOTAPattern(2, "Калх", "hero_calh"))
 
         itemList.layoutManager = LinearLayoutManager(this)
         itemList.adapter = JebusStarterHeroInfernoListCategoryAdapter(items, this)

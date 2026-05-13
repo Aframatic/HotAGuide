@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hotaguide.Jebus.starters.castles.inferno.calh.JebusStarterHeroCalhActivity
 import com.example.hotaguide.Jebus.starters.castles.inferno.ignatius.JebusStarterHeroIgnatiusActivity
 import com.example.hotaguide.R
 
@@ -37,6 +38,10 @@ class JebusStarterHeroInfernoListCategoryAdapter(
 
             if (p0.name.text == "Игнатиус") {
                 intent = Intent(context, JebusStarterHeroIgnatiusActivity::class.java)
+            }
+
+            if (p0.name.text == "Калх") {
+                intent = Intent(context, JebusStarterHeroCalhActivity::class.java)
             }
 
             context.startActivity(intent)

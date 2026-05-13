@@ -28,7 +28,7 @@ class JebusStarterHeroFactoryCategoryActivity : AppCompatActivity() {
         val itemList: RecyclerView = findViewById(R.id.pattern)
         val items = arrayListOf<HOTAPattern>()
 
-        items.add(HOTAPattern(1, "Хенриета", "hero_henrietta"))
+        items.add(HOTAPattern(1, "Генриетта", "hero_henrietta"))
         items.add(HOTAPattern(2, "Сэм", "hero_sam"))
 
         itemList.layoutManager = LinearLayoutManager(this)

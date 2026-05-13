@@ -1,11 +1,13 @@
 package com.example.hotaguide.Jebus.starters.castles.castle.loynis
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.hotaguide.R
+import com.example.hotaguide.Jebus.starters.castles.castle.valeska.JebusStarterHeroValeskaActivity
 
 class JebusStarterHeroLoynisActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,5 +19,9 @@ class JebusStarterHeroLoynisActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val title: TextView = findViewById(R.id.title)
+        title.text = "Лойнис"
+
     }
 }

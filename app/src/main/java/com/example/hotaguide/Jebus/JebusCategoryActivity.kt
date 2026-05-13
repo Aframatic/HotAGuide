@@ -31,6 +31,8 @@ class JebusCategoryActivity : AppCompatActivity() {
         items.add(HOTAPattern(1, "Объекты"))
         items.add(HOTAPattern(2, "Стартеры"))
         items.add(HOTAPattern(3, "Артефакты"))
+        items.add(HOTAPattern(4, "Существа"))
+        items.add(HOTAPattern(5, "Заклинания"))
 
         itemList.layoutManager = LinearLayoutManager(this)
         itemList.adapter = JebusListCategoryAdapter(items, this)

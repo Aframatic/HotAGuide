@@ -28,7 +28,7 @@ class JebusStarterHeroFortressCategoryActivity : AppCompatActivity() {
         val itemList: RecyclerView = findViewById(R.id.pattern)
         val items = arrayListOf<HOTAPattern>()
 
-        items.add(HOTAPattern(1, "Дракон", "hero_drakon"))
+        items.add(HOTAPattern(1, "Дрэйкон", "hero_drakon"))
 
         itemList.layoutManager = LinearLayoutManager(this)
         itemList.adapter = JebusStarterHeroFortressListCategoryAdapter(items, this)

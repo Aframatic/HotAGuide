@@ -36,7 +36,7 @@ class JebusStarterHeroFactoryListCategoryAdapter(
         p0.bt.setOnClickListener {
             var intent = Intent()
 
-            if (p0.name.text == "Хентриета") {
+            if (p0.name.text == "Генриетта") {
                 intent = Intent(context, JebusStarterHeroHenriettaActivity::class.java)
             }
 

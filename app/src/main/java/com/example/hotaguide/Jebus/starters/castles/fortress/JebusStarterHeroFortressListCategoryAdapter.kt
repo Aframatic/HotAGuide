@@ -37,7 +37,7 @@ class JebusStarterHeroFortressListCategoryAdapter(
         p0.bt.setOnClickListener {
             var intent = Intent()
 
-            if (p0.name.text == "Дракон") {
+            if (p0.name.text == "Дрэйкон") {
                 intent = Intent(context, JebusStarterHeroDrakonActivity::class.java)
             }
 

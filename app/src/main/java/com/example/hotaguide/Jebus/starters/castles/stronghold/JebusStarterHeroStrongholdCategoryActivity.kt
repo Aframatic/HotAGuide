@@ -29,7 +29,7 @@ class JebusStarterHeroStrongholdCategoryActivity : AppCompatActivity() {
         val items = arrayListOf<HOTAPattern>()
 
         items.add(HOTAPattern(1, "Гретчин", "hero_gretchin"))
-        items.add(HOTAPattern(2, "Тиракстор", "hero_tyraxor"))
+        items.add(HOTAPattern(2, "Тираксор", "hero_tyraxor"))
 
         itemList.layoutManager = LinearLayoutManager(this)
         itemList.adapter = JebusStarterHeroStrongholdListCategoryAdapter(items, this)

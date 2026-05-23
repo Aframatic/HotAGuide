@@ -1,4 +1,4 @@
-package com.example.hotaguide.HOTAPattern
+package com.example.hotaguide.Category.HOTACategory
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,12 +9,13 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.Category.CategoryListActivity
+import com.example.hotaguide.Category.CastlesStarters.CastleStarterActivity
+import com.example.hotaguide.Category.artefacts.ArtefactCategoryActivity
 import com.example.hotaguide.R
 
-class ListTitleAdapter(
-    private val hotaList: List<HOTAPattern>, var context: Context
-) : RecyclerView.Adapter<ListTitleAdapter.MyViewHolder>() {
+class CategoryListAdapter(
+    private val hotaList: List<HOTACategory>, var context: Context
+) : RecyclerView.Adapter<CategoryListAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyViewHolder {
         val view = LayoutInflater.from(p0.context).inflate(R.layout.activity_list_title, p0, false)
@@ -26,8 +27,16 @@ class ListTitleAdapter(
         p0.name.text = hotaList[p1].name
 
         p0.bt.setOnClickListener {
-            val intent = Intent(context, CategoryListActivity::class.java)
-            intent.putExtra("pattern_name", hotaList[p1].name)
+            var intent = Intent()
+
+            if (hotaList[p1].name == "Стартеры")
+                intent = Intent(context, CastleStarterActivity::class.java)
+
+            if (hotaList[p1].name == "Артефакты")
+                intent = Intent(context, ArtefactCategoryActivity::class.java)
+
+            intent.putExtra("category_name", hotaList[p1].name)
+            intent.putExtra("category_id", hotaList[p1].id)
             context.startActivity(intent)
         }
     }
@@ -41,5 +50,4 @@ class ListTitleAdapter(
 
         val name: TextView = view.findViewById(R.id.hota_list_pattern)
     }
-
 }

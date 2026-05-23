@@ -1,33 +1,41 @@
-package com.example.hotaguide.HOTAPattern
+package com.example.hotaguide.Category.CastlesStarters.HOTACastlesStarters
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.Category.CategoryListActivity
+import com.example.hotaguide.Category.CastlesStarters.HeroesCastle.HeroesCastleActivity
 import com.example.hotaguide.R
 
-class ListTitleAdapter(
-    private val hotaList: List<HOTAPattern>, var context: Context
-) : RecyclerView.Adapter<ListTitleAdapter.MyViewHolder>() {
+class CastleStarterListAdapter(
+    private val hotaList: List<HOTACastlesStarters>, var context: Context
+) : RecyclerView.Adapter<CastleStarterListAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyViewHolder {
         val view = LayoutInflater.from(p0.context).inflate(R.layout.activity_list_title, p0, false)
         return MyViewHolder(view)
     }
 
-    @SuppressLint("IntentWithNullActionLaunch")
     override fun onBindViewHolder(p0: MyViewHolder, p1: Int) {
         p0.name.text = hotaList[p1].name
 
+        val imageId = context.resources.getIdentifier(
+            hotaList[p1].image,
+            "drawable",
+            context.packageName
+        )
+        p0.leftImage.setImageResource(imageId)
+        p0.rightImage.setImageResource(imageId)
+
         p0.bt.setOnClickListener {
-            val intent = Intent(context, CategoryListActivity::class.java)
-            intent.putExtra("pattern_name", hotaList[p1].name)
+            val intent = Intent(context, HeroesCastleActivity::class.java)
+            intent.putExtra("starter_id", hotaList[p1].id)
+            intent.putExtra("starter_name", hotaList[p1].name)
             context.startActivity(intent)
         }
     }
@@ -38,8 +46,9 @@ class ListTitleAdapter(
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val bt: LinearLayout = view.findViewById(R.id.button_pattern)
+        var leftImage: ImageView = view.findViewById(R.id.right_image)
+        var rightImage: ImageView = view.findViewById(R.id.left_image)
 
         val name: TextView = view.findViewById(R.id.hota_list_pattern)
     }
-
 }

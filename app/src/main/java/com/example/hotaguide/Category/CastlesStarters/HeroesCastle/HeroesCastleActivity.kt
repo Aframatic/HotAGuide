@@ -1,17 +1,18 @@
-package com.example.hotaguide
+package com.example.hotaguide.Category.CastlesStarters.HeroesCastle
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.HOTAPattern.HOTAPattern
-import com.example.hotaguide.HOTAPattern.ListTitleAdapter
-import com.example.hotaguide.HOTAPattern.PatternDatabase
+import com.example.hotaguide.Category.CastlesStarters.HeroesCastle.HOTAHeroesCastle.HeroesCastleDatabase
+import com.example.hotaguide.Category.CastlesStarters.HeroesCastle.HOTAHeroesCastle.HeroesCastleAdapter
+import com.example.hotaguide.R
 
-class MainActivity : AppCompatActivity() {
+class HeroesCastleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +23,20 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val starterName = intent.getStringExtra("starter_name")
+        val starterId = intent.getIntExtra("starter_id", 0)
+
+        val title: TextView = findViewById(R.id.title)
+        title.text = starterName
+
         val recyclerView: RecyclerView = findViewById(R.id.pattern)
-        var categoryAdapter = ListTitleAdapter(emptyList(), this)
+        var categoryAdapter = HeroesCastleAdapter(emptyList(), this)
         recyclerView.adapter = categoryAdapter
 
-        val database = PatternDatabase(this)
+        val database = HeroesCastleDatabase(this)
 
-        val categoryList = database.getPatterns()
-        categoryAdapter = ListTitleAdapter(categoryList, this)
+        val categoryList = database.get(starterId)
+        categoryAdapter = HeroesCastleAdapter(categoryList, this)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = categoryAdapter
     }

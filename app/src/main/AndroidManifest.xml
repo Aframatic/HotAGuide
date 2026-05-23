@@ -11,113 +11,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HOTAGuide">
-
         <activity
-            android:name=".Jebus.starters.castles.castle.loynis.JebusStarterHeroLoynisActivity"
+            android:name=".Category.artefacts.ArtefactList.Collection.CollectionActivity"
             android:exported="false" />
         <activity
-            android:name=".Jebus.starters.castles.castle.valeska.JebusStarterHeroValeskaActivity"
+            android:name=".Category.CastlesStarters.HeroesCastle.HeroesCastleActivity"
             android:exported="false" />
         <activity
-            android:name=".Jebus.starters.castles.bulwark.eikthurn.JebusStarterHeroEikthurnActivity"
+            android:name=".Category.artefacts.ArtefactList.Collection.ItemCollection.ItemCollectionActivity"
             android:exported="false" />
         <activity
-            android:name=".Jebus.starters.castles.bulwark.kynr.JebusStarterHeroKynrActivity"
+            android:name=".Category.artefacts.ArtefactCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".Jebus.starters.castles.conflux.luna.JebusStarterHeroLunaActivity"
+            android:name=".Category.CategoryListActivity"
             android:exported="false" />
         <activity
-            android:name=".Jebus.starters.castles.cove.cassiopeia.JebusStarterHeroCassiopeiaActivity"
+            android:name=".Category.CastlesStarters.CastleStarterActivity"
             android:exported="false" />
         <activity
-            android:name=".Jebus.starters.castles.dungeon.shakti.JebusStarterHeroShaktiActivity"
+            android:name=".Category.artefacts.ArtefactList.Artefact.JebusArtefactArmorListActivity"
             android:exported="false" />
         <activity
-            android:name=".Jebus.starters.castles.factory.sam.JebusStarterHeroSamActivity"
+            android:name=".Category.CastlesStarters.HeroesCastle.Hero.HeroActivity"
             android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.factory.henrietta.JebusStarterHeroHenriettaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.fortress.drakon.JebusStarterHeroDrakonActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.inferno.ignatius.JebusStarterHeroIgnatiusActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.inferno.calh.JebusStarterHeroCalhActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.necropolis.thant.JebusStarterHeroThantActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.rampart.ivor.JebusStarterHeroIvorActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.stronghold.tyraxor.JebusStarterHeroTyraxorActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.stronghold.gretchin.JebusStarterHeroGretchinActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.tower.solmyr.JebusStarterHeroSolmyrActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Jebus.JebusCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Outcast.OutcastCategoryActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Jebus.starters.JebusStarterCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.objects.JebusObjectCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.artefacts.JebusArtefactCategoryActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Jebus.starters.castles.castle.JebusStarterHeroCastleCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.bulwark.JebusStarterHeroBulwarkCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.conflux.JebusStarterHeroConfluxCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.cove.JebusStarterHeroCoveCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.dungeon.JebusStarterHeroDungeonCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.factory.JebusStarterHeroFactoryCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.fortress.JebusStarterHeroFortressCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.inferno.JebusStarterHeroInfernoCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.necropolis.JebusStarterHeroNecropolisCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.rampart.JebusStarterHeroRampartCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.stronghold.JebusStarterHeroStrongholdCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Jebus.starters.castles.tower.JebusStarterHeroTowerCategoryActivity"
-            android:exported="false" />
-
         <activity
             android:name=".HOTAPattern.ListTitleAdapter"
             android:exported="false"

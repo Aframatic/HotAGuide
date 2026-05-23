@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/title"
     android:orientation="vertical"
-    tools:context=".Jebus.starters.castles.castle.loynis.JebusStarterHeroLoynisActivity">
+    tools:context=".Category.CastlesStarters.HeroesCastle.castle.loynis.JebusStarterHeroLoynisActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -215,7 +215,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/hero_skill_category1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/averia_libre_bold"
@@ -257,7 +256,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/hero_skill_category2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/averia_libre_bold"

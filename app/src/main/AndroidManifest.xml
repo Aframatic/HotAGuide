@@ -18,6 +18,9 @@
             android:name=".Category.CastlesStarters.HeroesCastle.HeroesCastleActivity"
             android:exported="false" />
         <activity
+            android:name=".Category.artefacts.ArtefactList.Artefact.HOTAArtefacts.ItemArtefact.ItemArtefactActivity"
+            android:exported="false" />
+        <activity
             android:name=".Category.artefacts.ArtefactList.Collection.ItemCollection.ItemCollectionActivity"
             android:exported="false" />
         <activity
@@ -30,7 +33,7 @@
             android:name=".Category.CastlesStarters.CastleStarterActivity"
             android:exported="false" />
         <activity
-            android:name=".Category.artefacts.ArtefactList.Artefact.JebusArtefactArmorListActivity"
+            android:name=".Category.artefacts.ArtefactList.Artefact.ArtefactsActivity"
             android:exported="false" />
         <activity
             android:name=".Category.CastlesStarters.HeroesCastle.Hero.HeroActivity"

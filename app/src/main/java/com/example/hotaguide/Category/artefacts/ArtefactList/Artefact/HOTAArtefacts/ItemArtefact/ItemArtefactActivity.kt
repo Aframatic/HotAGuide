@@ -1,4 +1,4 @@
-package com.example.hotaguide.Category.artefacts.ArtefactList.Collection.ItemCollection
+package com.example.hotaguide.Category.artefacts.ArtefactList.Artefact.HOTAArtefacts.ItemArtefact
 
 import android.os.Bundle
 import android.widget.ImageView
@@ -17,12 +17,12 @@ import com.example.hotaguide.Category.artefacts.ArtefactList.Collection.ItemColl
 import com.example.hotaguide.R
 
 
-class ItemCollectionActivity : AppCompatActivity() {
+class ItemArtefactActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_jebus_collection)
+        setContentView(R.layout.activity_jebus_artefact)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -31,7 +31,6 @@ class ItemCollectionActivity : AppCompatActivity() {
         val title: TextView = findViewById(R.id.title)
         title.text = "Сборник"
 
-        val collectionId = intent.getIntExtra("collection_id", 0)
         val nameCollection = intent.getStringExtra("collection_name")
         val nameDescription = intent.getStringExtra("collection_description")
         val nameImage = intent.getStringExtra("collection_image")
@@ -50,16 +49,5 @@ class ItemCollectionActivity : AppCompatActivity() {
         )
 
         artefactImage.setImageResource(collection_image)
-
-        val recyclerView: RecyclerView = findViewById(R.id.collection_list_item)
-        var categoryAdapter = ItemCollectionAdapter(emptyList(), this)
-        recyclerView.adapter = categoryAdapter
-
-        val database = ItemCollectionDatabase(this)
-
-        val categoryList = database.get(collectionId)
-        categoryAdapter = ItemCollectionAdapter(categoryList, this)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = categoryAdapter
     }
 }

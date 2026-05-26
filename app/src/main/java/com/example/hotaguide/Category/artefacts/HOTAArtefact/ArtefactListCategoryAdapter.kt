@@ -9,12 +9,12 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.Category.artefacts.ArtefactList.Artefact.JebusArtefactArmorListActivity
+import com.example.hotaguide.Category.artefacts.ArtefactList.Artefact.ArtefactsActivity
 import com.example.hotaguide.Category.artefacts.ArtefactList.Collection.CollectionActivity
 import com.example.hotaguide.R
 
 class ArtefactListCategoryAdapter(
-    private val hotaList: List<HOTAArtefacts>, var context: Context
+    private val hotaList: List<HOTAArtefactCategory>, var context: Context
 ) : RecyclerView.Adapter<ArtefactListCategoryAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyViewHolder {
@@ -34,7 +34,12 @@ class ArtefactListCategoryAdapter(
         p0.rightImage.setImageResource(imageId)
 
         p0.bt.setOnClickListener {
-            val intent = Intent(context, CollectionActivity::class.java)
+
+            val intent = if (hotaList[p1].name == "Сборник")
+                Intent(context, CollectionActivity::class.java)
+            else
+                Intent(context, ArtefactsActivity::class.java)
+
             intent.putExtra("id_list", hotaList[p1].id)
             intent.putExtra("name_list", hotaList[p1].name)
             context.startActivity(intent)

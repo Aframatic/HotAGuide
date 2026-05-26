@@ -2,8 +2,6 @@ package com.example.hotaguide.Category.artefacts.ArtefactList.Collection.ItemCol
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.example.hotaguide.Category.artefacts.ArtefactList.Collection.HOTACollection.HOTACollection
-import com.example.hotaguide.Category.artefacts.HOTAArtefact.HOTAArtefacts
 import com.example.hotaguide.db.DbHelper
 
 class ItemCollectionDatabase(context: Context) {

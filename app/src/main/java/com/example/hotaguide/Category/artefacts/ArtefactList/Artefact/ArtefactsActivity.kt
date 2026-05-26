@@ -1,4 +1,4 @@
-package com.example.hotaguide.Category.artefacts
+package com.example.hotaguide.Category.artefacts.ArtefactList.Artefact
 
 import android.os.Bundle
 import android.widget.TextView
@@ -6,14 +6,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.Category.artefacts.HOTAArtefact.ArtefactCategoryDatabase
-import com.example.hotaguide.Category.artefacts.HOTAArtefact.ArtefactListCategoryAdapter
+import com.example.hotaguide.Category.artefacts.ArtefactList.Artefact.HOTAArtefacts.ArtefactsAdapter
+import com.example.hotaguide.Category.artefacts.ArtefactList.Artefact.HOTAArtefacts.ArtefactsDatabase
+import com.example.hotaguide.Category.artefacts.ArtefactList.Collection.HOTACollection.CollectionAdapter
+import com.example.hotaguide.Category.artefacts.ArtefactList.Collection.HOTACollection.CollectionDatabase
 import com.example.hotaguide.R
 
-class ArtefactCategoryActivity : AppCompatActivity() {
-
+class ArtefactsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,22 +24,21 @@ class ArtefactCategoryActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val nameCategory = intent.getStringExtra("category_name")
-        val idCategory = intent.getIntExtra("category_id", 0)
+        val idCategory = intent.getIntExtra("id_list", 0)
+        val nameCategory = intent.getStringExtra("name_list")
 
         val title: TextView = findViewById(R.id.title)
         title.text = nameCategory
 
         val recyclerView: RecyclerView = findViewById(R.id.pattern)
-        var categoryAdapter = ArtefactListCategoryAdapter(emptyList(), this)
+        var categoryAdapter = ArtefactsAdapter(emptyList(), this)
         recyclerView.adapter = categoryAdapter
 
-        val database = ArtefactCategoryDatabase(this)
+        val database = ArtefactsDatabase(this)
 
         val categoryList = database.get(idCategory)
-        categoryAdapter = ArtefactListCategoryAdapter(categoryList, this)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        categoryAdapter = ArtefactsAdapter(categoryList, this)
+        recyclerView.setLayoutManager(GridLayoutManager(this, 3))
         recyclerView.adapter = categoryAdapter
     }
 }

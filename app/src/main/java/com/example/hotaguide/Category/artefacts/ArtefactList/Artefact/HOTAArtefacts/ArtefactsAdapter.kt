@@ -1,4 +1,4 @@
-package com.example.hotaguide.Category.artefacts.ArtefactList.Collection.HOTACollection
+package com.example.hotaguide.Category.artefacts.ArtefactList.Artefact.HOTAArtefacts
 
 import android.content.Context
 import android.content.Intent
@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.Category.artefacts.ArtefactList.Collection.ItemCollection.ItemCollectionActivity
+import com.example.hotaguide.Category.artefacts.ArtefactList.Artefact.HOTAArtefacts.ItemArtefact.ItemArtefactActivity
 import com.example.hotaguide.R
 
-class CollectionAdapter(
-    private val hotaList: List<HOTACollection>, var context: Context
-) : RecyclerView.Adapter<CollectionAdapter.MyViewHolder>() {
+class ArtefactsAdapter(
+    private val hotaList: List<HOTAArtefacts>, var context: Context
+) : RecyclerView.Adapter<ArtefactsAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyViewHolder {
         val view = LayoutInflater.from(p0.context).inflate(R.layout.activity_jebus_artefacts_list, p0, false)
@@ -31,7 +31,7 @@ class CollectionAdapter(
         p0.artefactImage.setImageResource(imageId)
 
         p0.bt.setOnClickListener {
-            val intent = Intent(context, ItemCollectionActivity::class.java)
+            val intent = Intent(context, ItemArtefactActivity::class.java)
             intent.putExtra("collection_id", hotaList[p1].id)
             intent.putExtra("collection_name", hotaList[p1].name)
             intent.putExtra("collection_image", hotaList[p1].image)

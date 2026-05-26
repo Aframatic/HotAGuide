@@ -1,17 +1,12 @@
 package com.example.hotaguide.Category.artefacts.ArtefactList.Collection.ItemCollection.HOTAItemCollection
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.Category.artefacts.ArtefactList.Artefact.JebusArtefactArmorListActivity
-import com.example.hotaguide.Category.artefacts.ArtefactList.Collection.HOTACollection.HOTACollection
-import com.example.hotaguide.Category.artefacts.ArtefactList.Collection.ItemCollection.ItemCollectionActivity
 import com.example.hotaguide.R
 
 class ItemCollectionAdapter(

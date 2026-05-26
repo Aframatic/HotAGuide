@@ -118,4 +118,43 @@
             android:textColor="@color/white"
             android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginHorizontal="30sp"
+        android:layout_marginTop="12sp"
+        app:cardCornerRadius="15dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_hero"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5sp"
+            android:fontFamily="@font/averia_libre_bold"
+            android:gravity="center"
+            android:text="Предметы для сборки"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30sp"
+        android:layout_marginTop="12sp"
+        app:cardCornerRadius="15dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/collection_list_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_hero"
+            android:scaleType="fitXY" />
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

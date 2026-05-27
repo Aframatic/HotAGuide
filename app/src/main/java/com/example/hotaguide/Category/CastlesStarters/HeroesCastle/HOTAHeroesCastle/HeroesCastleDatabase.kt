@@ -13,7 +13,7 @@ class HeroesCastleDatabase(context: Context) {
         val db = databaseHelper.readableDatabase
 
         val cursor = db.rawQuery(
-            "SELECT * FROM starterHero WHERE castleStarter_id = ?",
+            "SELECT * FROM starterHero WHERE category_list_id = ?",
             arrayOf(categoryId.toString())
         )
 

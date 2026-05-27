@@ -25,15 +25,6 @@ class DbHelper(context: Context) :
             )
         """
 
-        private const val CREATE_TABLE_CATEGORY_STARTERS = """
-            CREATE TABLE castleStarter (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                starter_name TEXT,
-                starter_image TEXT,
-                category_id INTEGER REFERENCES category (id)
-            )
-        """
-
         private const val CREATE_TABLE_CATEGORY_STARTERS_HERO = """
             CREATE TABLE starterHero (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -56,7 +47,7 @@ class DbHelper(context: Context) :
                 creature_count_1 TEXT,
                 creature_count_2 TEXT,
                 creature_count_3 TEXT,
-                castleStarter_id INTEGER REFERENCES castleStarter (id)
+                category_list_id INTEGER REFERENCES category_list (id)
             )
         """
 
@@ -66,12 +57,12 @@ class DbHelper(context: Context) :
                 name TEXT,
                 image TEXT,
                 description TEXT,
-                artefacts_list_id INTEGER REFERENCES artefacts_list (id)
+                category_list_id INTEGER REFERENCES category_list (id)
             )
         """
 
-        private const val CREATE_TABLE_CATEGORY_ARTEFACTS_LIST = """
-            CREATE TABLE artefacts_list (
+        private const val CREATE_TABLE_CATEGORY_LIST = """
+            CREATE TABLE category_list (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name TEXT,
                 image TEXT,
@@ -85,7 +76,7 @@ class DbHelper(context: Context) :
                 name TEXT,
                 image TEXT,
                 description TEXT,
-                category_id INTEGER REFERENCES artefacts_list (id)
+                category_id INTEGER REFERENCES category_list (id)
             )
         """
 
@@ -96,28 +87,45 @@ class DbHelper(context: Context) :
                 artefact_id INTEGER REFERENCES artefacts (id)
             )
         """
+
+        private const val CREATE_TABLE_CREATURES = """
+            CREATE TABLE creatures (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT,
+                image TEXT,
+                attack INTEGER,
+                defense INTEGER,
+                ammo INTEGER,
+                damage TEXT,
+                health INTEGER,
+                speed INTEGER,
+                upgrade INTEGER,
+                specificity TEXT DEFAULT "Нет",
+                category_list_id INTEGER REFERENCES category_list (id)
+            )
+        """
     }
 
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(CREATE_TABLE_PATTERN)
         db.execSQL(CREATE_TABLE_CATEGORY)
-        db.execSQL(CREATE_TABLE_CATEGORY_STARTERS)
         db.execSQL(CREATE_TABLE_CATEGORY_STARTERS_HERO)
         db.execSQL(CREATE_TABLE_CATEGORY_ARTEFACTS)
-        db.execSQL(CREATE_TABLE_CATEGORY_ARTEFACTS_LIST)
+        db.execSQL(CREATE_TABLE_CATEGORY_LIST)
         db.execSQL(CREATE_TABLE_CATEGORY_ARTEFACT_COLLECTION)
         db.execSQL(CREATE_TABLE_CATEGORY_ARTEFACT_ITEM_COLLECTION)
+        db.execSQL(CREATE_TABLE_CREATURES)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, p1: Int, p2: Int) {
         db.execSQL("DROP TABLE IF EXISTS pattern")
         db.execSQL("DROP TABLE IF EXISTS category")
-        db.execSQL("DROP TABLE IF EXISTS categoryStarter")
         db.execSQL("DROP TABLE IF EXISTS starterHero")
         db.execSQL("DROP TABLE IF EXISTS artefacts")
-        db.execSQL("DROP TABLE IF EXISTS artefacts_list")
+        db.execSQL("DROP TABLE IF EXISTS category_list")
         db.execSQL("DROP TABLE IF EXISTS artefacts_collection")
         db.execSQL("DROP TABLE IF EXISTS artefacts_item_collection")
+        db.execSQL("DROP TABLE IF EXISTS creatures")
         onCreate(db)
     }
 }

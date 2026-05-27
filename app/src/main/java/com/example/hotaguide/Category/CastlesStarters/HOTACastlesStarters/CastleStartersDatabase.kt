@@ -13,7 +13,7 @@ class CastleStartersDatabase (context: Context) {
         val db = databaseHelper.readableDatabase
 
         val cursor = db.rawQuery(
-            "SELECT * FROM castleStarter WHERE category_id = ?",
+            "SELECT * FROM category_list WHERE category_id = ?",
             arrayOf(categoryId.toString())
         )
 
@@ -23,8 +23,8 @@ class CastleStartersDatabase (context: Context) {
 
         while (cursor.moveToNext()) {
             id = cursor.getInt(cursor.getColumnIndex("id"))
-            name = cursor.getString(cursor.getColumnIndex("starter_name"))
-            image = cursor.getString(cursor.getColumnIndex("starter_image"))
+            name = cursor.getString(cursor.getColumnIndex("name"))
+            image = cursor.getString(cursor.getColumnIndex("image"))
             list.add(HOTACastlesStarters(id, name, image))
         }
 

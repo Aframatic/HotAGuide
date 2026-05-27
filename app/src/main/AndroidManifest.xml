@@ -12,19 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HOTAGuide">
         <activity
-            android:name=".Category.artefacts.ArtefactList.Collection.CollectionActivity"
+            android:name=".Category.Creatures.CreatureList.CreatureListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Category.Creatures.CreaturesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Category.Spells.SpellsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Category.Artefacts.ArtefactList.Collection.CollectionActivity"
             android:exported="false" />
         <activity
             android:name=".Category.CastlesStarters.HeroesCastle.HeroesCastleActivity"
             android:exported="false" />
         <activity
-            android:name=".Category.artefacts.ArtefactList.Artefact.HOTAArtefacts.ItemArtefact.ItemArtefactActivity"
+            android:name=".Category.Artefacts.ArtefactList.Artefact.ItemArtefact.ItemArtefactActivity"
             android:exported="false" />
         <activity
-            android:name=".Category.artefacts.ArtefactList.Collection.ItemCollection.ItemCollectionActivity"
+            android:name=".Category.Artefacts.ArtefactList.Collection.ItemCollection.ItemCollectionActivity"
             android:exported="false" />
         <activity
-            android:name=".Category.artefacts.ArtefactCategoryActivity"
+            android:name=".Category.Artefacts.ArtefactCategoryActivity"
             android:exported="false" />
         <activity
             android:name=".Category.CategoryListActivity"
@@ -33,7 +42,7 @@
             android:name=".Category.CastlesStarters.CastleStarterActivity"
             android:exported="false" />
         <activity
-            android:name=".Category.artefacts.ArtefactList.Artefact.ArtefactsActivity"
+            android:name=".Category.Artefacts.ArtefactList.Artefact.ArtefactsActivity"
             android:exported="false" />
         <activity
             android:name=".Category.CastlesStarters.HeroesCastle.Hero.HeroActivity"

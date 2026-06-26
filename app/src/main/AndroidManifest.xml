@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HOTAGuide">
         <activity
+            android:name=".Category.Creatures.CreatureList.CreatureDescription.CreatureDescriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".Category.Creatures.CreatureList.CreatureListActivity"
             android:exported="false" />
         <activity
@@ -19,6 +22,18 @@
             android:exported="false" />
         <activity
             android:name=".Category.Spells.SpellsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Category.Spells.SpellsList.SpellsListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Category.Spells.SpellsList.SpellDescription.SpellDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Category.CheatCodes.CheatCodesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Category.CheatCodes.CheatCodeDescription.CheatCodeDescriptionActivity"
             android:exported="false" />
         <activity
             android:name=".Category.Artefacts.ArtefactList.Collection.CollectionActivity"

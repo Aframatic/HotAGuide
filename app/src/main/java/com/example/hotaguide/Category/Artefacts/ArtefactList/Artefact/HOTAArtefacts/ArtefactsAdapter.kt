@@ -21,7 +21,6 @@ class ArtefactsAdapter(
     }
 
     override fun onBindViewHolder(p0: MyViewHolder, p1: Int) {
-
         val imageId = context.resources.getIdentifier(
             hotaList[p1].image,
             "drawable",

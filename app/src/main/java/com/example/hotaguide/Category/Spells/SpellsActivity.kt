@@ -8,10 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.Category.CastlesStarters.HOTACastlesStarters.CastleStarterListAdapter
-import com.example.hotaguide.Category.CastlesStarters.HOTACastlesStarters.CastleStartersDatabase
 import com.example.hotaguide.Category.Spells.HOTASpells.SpellsDatabase
-import com.example.hotaguide.Category.Spells.HOTASpells.SpellsListAdapter
+import com.example.hotaguide.Category.Spells.HOTASpells.SpellsAdapter
 import com.example.hotaguide.R
 
 class SpellsActivity : AppCompatActivity() {
@@ -31,13 +29,13 @@ class SpellsActivity : AppCompatActivity() {
         title.text = nameCategory
 
         val recyclerView: RecyclerView = findViewById(R.id.pattern)
-        var categoryAdapter = SpellsListAdapter(emptyList(), this)
+        var categoryAdapter = SpellsAdapter(emptyList(), this)
         recyclerView.adapter = categoryAdapter
 
         val database = SpellsDatabase(this)
 
         val categoryList = database.get(idCategory)
-        categoryAdapter = SpellsListAdapter(categoryList, this)
+        categoryAdapter = SpellsAdapter(categoryList, this)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = categoryAdapter
     }

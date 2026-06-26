@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotaguide.Category.CastlesStarters.CastleStarterActivity
 import com.example.hotaguide.Category.Artefacts.ArtefactCategoryActivity
+import com.example.hotaguide.Category.CheatCodes.CheatCodesActivity
 import com.example.hotaguide.Category.Creatures.CreaturesActivity
 import com.example.hotaguide.Category.Spells.SpellsActivity
 import com.example.hotaguide.R
@@ -42,6 +43,9 @@ class CategoryListAdapter(
 
             if (hotaList[p1].name == "Заклинания")
                 intent = Intent(context, SpellsActivity::class.java)
+
+            if (hotaList[p1].name == "Чит коды")
+                intent = Intent(context, CheatCodesActivity::class.java)
 
             intent.putExtra("category_name", hotaList[p1].name)
             intent.putExtra("category_id", hotaList[p1].id)

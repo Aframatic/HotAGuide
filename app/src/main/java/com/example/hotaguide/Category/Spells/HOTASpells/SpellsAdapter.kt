@@ -9,12 +9,12 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.Category.CastlesStarters.HeroesCastle.HeroesCastleActivity
+import com.example.hotaguide.Category.Spells.SpellsList.SpellsListActivity
 import com.example.hotaguide.R
 
-class SpellsListAdapter(
+class SpellsAdapter(
     private val hotaList: List<HOTASpells>, var context: Context
-) : RecyclerView.Adapter<SpellsListAdapter.MyViewHolder>() {
+) : RecyclerView.Adapter<SpellsAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyViewHolder {
         val view = LayoutInflater.from(p0.context).inflate(R.layout.activity_list_title, p0, false)
@@ -33,9 +33,9 @@ class SpellsListAdapter(
         p0.rightImage.setImageResource(imageId)
 
         p0.bt.setOnClickListener {
-            val intent = Intent(context, HeroesCastleActivity::class.java)
-            intent.putExtra("starter_id", hotaList[p1].id)
-            intent.putExtra("starter_name", hotaList[p1].name)
+            val intent = Intent(context, SpellsListActivity::class.java)
+            intent.putExtra("category_id", hotaList[p1].id)
+            intent.putExtra("category_name", hotaList[p1].name)
             context.startActivity(intent)
         }
     }

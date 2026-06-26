@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hotaguide.Category.Creatures.CreatureList.CreatureDescription.CreatureDescriptionActivity
 import com.example.hotaguide.Category.Creatures.CreatureList.CreatureListActivity
 import com.example.hotaguide.R
 
@@ -33,9 +34,8 @@ class CreatureListAdapter(
         p0.rightImage.setImageResource(imageId)
 
         p0.bt.setOnClickListener {
-            val intent = Intent(context, CreatureListActivity::class.java)
-            intent.putExtra("starter_id", hotaList[p1].id)
-            intent.putExtra("starter_name", hotaList[p1].name)
+            val intent = Intent(context, CreatureDescriptionActivity::class.java)
+            intent.putExtra("creature_id", hotaList[p1].id)
             context.startActivity(intent)
         }
     }

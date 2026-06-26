@@ -100,8 +100,32 @@ class DbHelper(context: Context) :
                 health INTEGER,
                 speed INTEGER,
                 upgrade INTEGER,
-                specificity TEXT DEFAULT "Нет",
+                specificity TEXT DEFAULT "Нет.",
+                category_list_id INTEGER REFERENCES category_list (id),
+                id_grade_creature INTEGER
+            )
+        """
+
+        private const val CREATE_TABLE_SPELLS = """
+            CREATE TABLE spells (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT,
+                image TEXT,
+                cost_with_skill INTEGER,
+                cost_without_skill INTEGER,
+                basic TEXT,
+                advanced TEXT,
+                expert TEXT,
                 category_list_id INTEGER REFERENCES category_list (id)
+            )
+        """
+
+        private const val CREATE_TABLE_CHEAT_CODES = """
+            CREATE TABLE cheat_codes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT,
+                description TEXT,
+                text TEXT
             )
         """
     }
@@ -115,6 +139,8 @@ class DbHelper(context: Context) :
         db.execSQL(CREATE_TABLE_CATEGORY_ARTEFACT_COLLECTION)
         db.execSQL(CREATE_TABLE_CATEGORY_ARTEFACT_ITEM_COLLECTION)
         db.execSQL(CREATE_TABLE_CREATURES)
+        db.execSQL(CREATE_TABLE_SPELLS)
+        db.execSQL(CREATE_TABLE_CHEAT_CODES)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, p1: Int, p2: Int) {
@@ -126,6 +152,8 @@ class DbHelper(context: Context) :
         db.execSQL("DROP TABLE IF EXISTS artefacts_collection")
         db.execSQL("DROP TABLE IF EXISTS artefacts_item_collection")
         db.execSQL("DROP TABLE IF EXISTS creatures")
+        db.execSQL("DROP TABLE IF EXISTS spells")
+        db.execSQL("DROP TABLE IF EXISTS cheat_codes")
         onCreate(db)
     }
 }

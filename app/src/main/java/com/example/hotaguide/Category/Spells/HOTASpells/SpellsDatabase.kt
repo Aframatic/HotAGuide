@@ -2,15 +2,17 @@ package com.example.hotaguide.Category.Spells.HOTASpells
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.example.hotaguide.db.DbHelper
+import com.example.hotaguide.db.DbNotHelper
 
 class SpellsDatabase (context: Context) {
-    private val databaseHelper = DbHelper(context)
+    private val databaseNothelper = DbNotHelper(context)
+
 
     @SuppressLint("Range")
     fun get(categoryId: Int): List<HOTASpells> {
         val list = mutableListOf<HOTASpells>()
-        val db = databaseHelper.readableDatabase
+        val db = databaseNothelper.getReadableDatabase()
+
 
         val cursor = db.rawQuery(
             "SELECT * FROM category_list WHERE category_id = ?",

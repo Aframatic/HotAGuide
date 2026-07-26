@@ -1,4 +1,4 @@
-package com.example.hotaguide.Jebus.objects
+package com.example.hotaguide.Category.Objects.HOTAObjects
 
 import android.content.Context
 import android.content.Intent
@@ -9,11 +9,12 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hotaguide.Jebus.objects.ObjectsListActivity
 import com.example.hotaguide.R
 
-class JebusObjectListCategoryAdapter(
-    private val hotaList: List<HOTAPattern>, var context: Context
-) : RecyclerView.Adapter<JebusObjectListCategoryAdapter.MyViewHolder>() {
+class ObjectAdapter(
+    private val hotaList: List<HOTAObject>, var context: Context
+) : RecyclerView.Adapter<ObjectAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyViewHolder {
         val view = LayoutInflater.from(p0.context).inflate(R.layout.activity_list_title, p0, false)
@@ -32,7 +33,7 @@ class JebusObjectListCategoryAdapter(
         p0.rightImage.setImageResource(imageId)
 
         p0.bt.setOnClickListener {
-            val intent = Intent(context, JebusObjectCategoryActivity::class.java)
+            val intent = Intent(context, ObjectsListActivity::class.java)
             context.startActivity(intent)
         }
     }
@@ -43,15 +44,9 @@ class JebusObjectListCategoryAdapter(
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val bt: LinearLayout = view.findViewById(R.id.button_pattern)
-        var leftImage: ImageView = view.findViewById(R.id.right_image)
-        var rightImage: ImageView = view.findViewById(R.id.left_image)
+        var leftImage: ImageView = view.findViewById(R.id.left_image)
+        var rightImage: ImageView = view.findViewById(R.id.right_image)
 
         val name: TextView = view.findViewById(R.id.hota_list_pattern)
     }
-
-    data class HOTAPattern(
-        val id: Int,
-        val name: String,
-        val image: String
-    )
 }

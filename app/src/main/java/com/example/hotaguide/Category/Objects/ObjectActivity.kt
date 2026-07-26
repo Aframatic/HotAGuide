@@ -8,10 +8,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.Jebus.objects.JebusObjectListCategoryAdapter.HOTAPattern
+import com.example.hotaguide.Category.Objects.HOTAObjects.ObjectAdapter
+import com.example.hotaguide.Category.Objects.HOTAObjects.ObjectsDatabase
 import com.example.hotaguide.R
 
-class JebusObjectCategoryActivity : AppCompatActivity() {
+class ObjectActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,15 +26,18 @@ class JebusObjectCategoryActivity : AppCompatActivity() {
         val title: TextView = findViewById(R.id.title)
         title.text = "Объекты"
 
-        val itemList: RecyclerView = findViewById(R.id.pattern)
-        val items = arrayListOf<HOTAPattern>()
+        val recyclerView: RecyclerView = findViewById(R.id.pattern)
+        var categoryAdapter = ObjectAdapter(emptyList(), this)
+        recyclerView.adapter = categoryAdapter
 
-        items.add(HOTAPattern(1, "Погост", "churchyard"))
-        items.add(HOTAPattern(2, "Улик", "evidence"))
-        items.add(HOTAPattern(3, "Зефа", "zefa"))
-        items.add(HOTAPattern(4, "Консерватория ", "conservatory"))
+        val database = ObjectsDatabase(this)
 
-        itemList.layoutManager = LinearLayoutManager(this)
-        itemList.adapter = JebusObjectListCategoryAdapter(items, this)
+        println(2222222222222)
+        println(2222222222222222)
+
+        val categoryList = database.getObjects()
+        categoryAdapter = ObjectAdapter(categoryList, this)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = categoryAdapter
     }
 }

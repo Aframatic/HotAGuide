@@ -3,14 +3,15 @@ package com.example.hotaguide.Category.Artefacts.ArtefactList.Collection.HOTACol
 import android.annotation.SuppressLint
 import android.content.Context
 import com.example.hotaguide.db.DbHelper
+import com.example.hotaguide.db.DbNotHelper
 
 class CollectionDatabase (context: Context) {
-    private val databaseHelper = DbHelper(context)
+    private val databaseNothelper = DbNotHelper(context)
 
     @SuppressLint("Range")
     fun get(idCategory: Int): List<HOTACollection> {
         val list = mutableListOf<HOTACollection>()
-        val db = databaseHelper.readableDatabase
+        val db = databaseNothelper.getReadableDatabase()
 
         val cursor = db.rawQuery(
             "SELECT * FROM artefact_collection WHERE list_id = ?",

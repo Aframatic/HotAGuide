@@ -2,15 +2,15 @@ package com.example.hotaguide.Category.Creatures.CreatureList.CreatureDescriptio
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.example.hotaguide.db.DbHelper
+import com.example.hotaguide.db.DbNotHelper
 
 class CreatureDescriptionDatabase(context: Context) {
-    private val databaseHelper = DbHelper(context)
+    private val databaseNothelper = DbNotHelper(context)
 
     @SuppressLint("Range")
     fun get(categoryId: Int): List<HOTACreatureDescription> {
         val list = mutableListOf<HOTACreatureDescription>()
-        val db = databaseHelper.readableDatabase
+        val db = databaseNothelper.getReadableDatabase()
 
         val cursor = db.rawQuery(
             "SELECT * FROM creatures WHERE id_grade_creature = ?",

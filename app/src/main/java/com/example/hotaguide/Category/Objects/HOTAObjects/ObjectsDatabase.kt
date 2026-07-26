@@ -1,23 +1,26 @@
-package com.example.hotaguide.Category.Creatures.HOTACreatures
+package com.example.hotaguide.Category.Objects.HOTAObjects
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.example.hotaguide.db.DbHelper
 import com.example.hotaguide.db.DbNotHelper
 
-class CreaturesDatabase (context: Context) {
+class ObjectsDatabase(context: Context) {
     private val databaseNothelper = DbNotHelper(context)
 
-
     @SuppressLint("Range")
-    fun get(categoryId: Int): List<HOTACreatures> {
-        val list = mutableListOf<HOTACreatures>()
+    fun getObjects(): List<HOTAObject> {
+        val list = mutableListOf<HOTAObject>()
+
         val db = databaseNothelper.getReadableDatabase()
 
-
-        val cursor = db.rawQuery(
-            "SELECT * FROM category_list WHERE category_id = ?",
-            arrayOf(categoryId.toString())
+        val cursor = db.query(
+            "objects",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
         )
 
         var id: Int
@@ -28,8 +31,12 @@ class CreaturesDatabase (context: Context) {
             id = cursor.getInt(cursor.getColumnIndex("id"))
             name = cursor.getString(cursor.getColumnIndex("name"))
             image = cursor.getString(cursor.getColumnIndex("image"))
-            list.add(HOTACreatures(id, name, image))
+            list.add(HOTAObject(id, name, image))
         }
+
+        println(1111111111111111)
+
+        println(1111111111111111111)
 
         cursor.close()
         db.close()

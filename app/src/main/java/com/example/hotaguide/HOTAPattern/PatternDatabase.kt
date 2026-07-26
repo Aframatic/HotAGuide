@@ -2,15 +2,16 @@ package com.example.hotaguide.HOTAPattern
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.example.hotaguide.db.DbHelper
+import com.example.hotaguide.db.DbNotHelper
 
 class PatternDatabase(context: Context) {
-    private val databaseHelper = DbHelper(context)
+    private val databaseNothelper = DbNotHelper(context)
 
     @SuppressLint("Range")
     fun getPatterns(): List<HOTAPattern> {
         val list = mutableListOf<HOTAPattern>()
-        val db = databaseHelper.readableDatabase
+
+        val db = databaseNothelper.getReadableDatabase()
 
         val cursor = db.query(
             "pattern",

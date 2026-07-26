@@ -7,7 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotaguide.HOTAPattern.HOTAPattern
 import com.example.hotaguide.HOTAPattern.ListTitleAdapter
 import com.example.hotaguide.HOTAPattern.PatternDatabase
 

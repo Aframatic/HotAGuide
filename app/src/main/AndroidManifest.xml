@@ -24,6 +24,9 @@
             android:name=".Category.Spells.SpellsActivity"
             android:exported="false" />
         <activity
+            android:name=".Jebus.objects.ObjectActivity"
+            android:exported="false" />
+        <activity
             android:name=".Category.Spells.SpellsList.SpellsListActivity"
             android:exported="false" />
         <activity

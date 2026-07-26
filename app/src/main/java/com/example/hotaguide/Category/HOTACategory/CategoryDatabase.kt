@@ -3,14 +3,16 @@ package com.example.hotaguide.Category.HOTACategory
 import android.annotation.SuppressLint
 import android.content.Context
 import com.example.hotaguide.db.DbHelper
+import com.example.hotaguide.db.DbNotHelper
 
 class CategoryDatabase(context: Context) {
-    private val databaseHelper = DbHelper(context)
+    private val databaseNothelper = DbNotHelper(context)
+
 
     @SuppressLint("Range")
     fun getCategory(): List<HOTACategory> {
         val list = mutableListOf<HOTACategory>()
-        val db = databaseHelper.readableDatabase
+        val db = databaseNothelper.getReadableDatabase()
 
         val cursor = db.query(
             "category",

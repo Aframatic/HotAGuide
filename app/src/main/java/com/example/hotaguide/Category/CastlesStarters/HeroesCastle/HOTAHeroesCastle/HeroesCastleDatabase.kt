@@ -3,14 +3,15 @@ package com.example.hotaguide.Category.CastlesStarters.HeroesCastle.HOTAHeroesCa
 import android.annotation.SuppressLint
 import android.content.Context
 import com.example.hotaguide.db.DbHelper
+import com.example.hotaguide.db.DbNotHelper
 
 class HeroesCastleDatabase(context: Context) {
-    private val databaseHelper = DbHelper(context)
+    private val databaseNothelper = DbNotHelper(context)
 
     @SuppressLint("Range")
     fun get(categoryId: Int): List<HOTAHeroesCastle> {
         val list = mutableListOf<HOTAHeroesCastle>()
-        val db = databaseHelper.readableDatabase
+        val db = databaseNothelper.getReadableDatabase()
 
         val cursor = db.rawQuery(
             "SELECT * FROM starterHero WHERE category_list_id = ?",

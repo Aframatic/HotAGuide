@@ -14,6 +14,8 @@ import com.example.hotaguide.Category.Artefacts.ArtefactCategoryActivity
 import com.example.hotaguide.Category.CheatCodes.CheatCodesActivity
 import com.example.hotaguide.Category.Creatures.CreaturesActivity
 import com.example.hotaguide.Category.Spells.SpellsActivity
+import com.example.hotaguide.Jebus.objects.ObjectActivity
+import com.example.hotaguide.Jebus.objects.ObjectsListActivity
 import com.example.hotaguide.R
 
 class CategoryListAdapter(
@@ -46,6 +48,9 @@ class CategoryListAdapter(
 
             if (hotaList[p1].name == "Чит коды")
                 intent = Intent(context, CheatCodesActivity::class.java)
+
+            if (hotaList[p1].name == "Объекты")
+                intent = Intent(context, ObjectActivity::class.java)
 
             intent.putExtra("category_name", hotaList[p1].name)
             intent.putExtra("category_id", hotaList[p1].id)

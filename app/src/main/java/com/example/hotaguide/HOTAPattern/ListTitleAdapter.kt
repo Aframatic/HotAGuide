@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotaguide.Category.CategoryListActivity
 import com.example.hotaguide.R
+import com.example.hotaguide.db.DbNotHelper
 
 class ListTitleAdapter(
     private val hotaList: List<HOTAPattern>, var context: Context

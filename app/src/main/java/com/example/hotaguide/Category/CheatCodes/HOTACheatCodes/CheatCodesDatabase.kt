@@ -3,14 +3,15 @@ package com.example.hotaguide.Category.CheatCodes.HOTACheatCodes
 import android.annotation.SuppressLint
 import android.content.Context
 import com.example.hotaguide.db.DbHelper
+import com.example.hotaguide.db.DbNotHelper
 
 class CheatCodesDatabase(context: Context) {
-    private val databaseHelper = DbHelper(context)
+    private val databaseNothelper = DbNotHelper(context)
 
     @SuppressLint("Range")
     fun get(): List<HOTACheatCodes> {
         val list = mutableListOf<HOTACheatCodes>()
-        val db = databaseHelper.readableDatabase
+        val db = databaseNothelper.getReadableDatabase()
 
         val cursor = db.query(
             "cheat_codes",

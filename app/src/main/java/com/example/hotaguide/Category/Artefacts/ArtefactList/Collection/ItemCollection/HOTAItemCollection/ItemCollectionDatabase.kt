@@ -48,5 +48,4 @@ class ItemCollectionDatabase(context: Context) {
 
         return list
     }
-
 }

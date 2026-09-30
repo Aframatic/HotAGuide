@@ -1,5 +1,5 @@
 package com.example.hotaguide.Category.Objects.HOTAObjects
 
-class HOTAObject(val id: Int, val name: String, val image: String) {
+class HOTAObject(val id: Int, val name: String, val image: String, val imageGrid: String) {
 
 }

@@ -30,10 +30,8 @@ class ObjectActivity : AppCompatActivity() {
         var categoryAdapter = ObjectAdapter(emptyList(), this)
         recyclerView.adapter = categoryAdapter
 
-        val database = ObjectsDatabase(this)
 
-        println(2222222222222)
-        println(2222222222222222)
+        val database = ObjectsDatabase(this)
 
         val categoryList = database.getObjects()
         categoryAdapter = ObjectAdapter(categoryList, this)

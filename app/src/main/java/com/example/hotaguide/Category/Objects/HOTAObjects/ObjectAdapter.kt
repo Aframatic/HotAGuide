@@ -34,6 +34,10 @@ class ObjectAdapter(
 
         p0.bt.setOnClickListener {
             val intent = Intent(context, ObjectsListActivity::class.java)
+            intent.putExtra("object_name", hotaList[p1].name)
+            intent.putExtra("object_image", hotaList[p1].image)
+            intent.putExtra("object_id", hotaList[p1].id)
+            intent.putExtra("object_grid", hotaList[p1].imageGrid)
             context.startActivity(intent)
         }
     }

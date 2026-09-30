@@ -26,17 +26,15 @@ class ObjectsDatabase(context: Context) {
         var id: Int
         var name: String
         var image: String
+        var imageGrid: String
 
         while (cursor.moveToNext()) {
             id = cursor.getInt(cursor.getColumnIndex("id"))
             name = cursor.getString(cursor.getColumnIndex("name"))
             image = cursor.getString(cursor.getColumnIndex("image"))
-            list.add(HOTAObject(id, name, image))
+            imageGrid = cursor.getString(cursor.getColumnIndex("object_grid"))
+            list.add(HOTAObject(id, name, image, imageGrid))
         }
-
-        println(1111111111111111)
-
-        println(1111111111111111111)
 
         cursor.close()
         db.close()

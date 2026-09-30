@@ -53,4 +53,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation ("com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1")
+    implementation("com.github.bumptech.glide:glide:4.9.0")
 }

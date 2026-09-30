@@ -5,7 +5,7 @@ import android.content.Context
 import com.example.hotaguide.db.DbHelper
 import com.example.hotaguide.db.DbNotHelper
 
-class CreaturesDatabase (context: Context) {
+class CreaturesDatabase(context: Context) {
     private val databaseNothelper = DbNotHelper(context)
 
 
@@ -13,7 +13,6 @@ class CreaturesDatabase (context: Context) {
     fun get(categoryId: Int): List<HOTACreatures> {
         val list = mutableListOf<HOTACreatures>()
         val db = databaseNothelper.getReadableDatabase()
-
 
         val cursor = db.rawQuery(
             "SELECT * FROM category_list WHERE category_id = ?",

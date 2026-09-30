@@ -9,7 +9,7 @@ class DbNotHelper(context: Context?) :
 
     companion object {
         private const val DATABASE_NAME = "hotaguide.db"
-        private const val DATABASE_VERSION = 9
+        private const val DATABASE_VERSION = 19
 
     }
 
